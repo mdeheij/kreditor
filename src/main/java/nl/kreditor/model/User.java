@@ -36,6 +36,11 @@ public class User {
     @Column
     private LocalDateTime disabledAt;
 
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    @EqualsAndHashCode.Exclude
+    private Set<Book> ownedBooks;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
