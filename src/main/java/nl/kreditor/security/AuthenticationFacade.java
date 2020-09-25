@@ -13,12 +13,11 @@ public class AuthenticationFacade implements Authenticatable {
     @Autowired
     private UserService userService;
 
-    @Override
-    public Authentication getAuthentication() {
+    private Authentication getAuthentication() {
         return SecurityContextHolder.getContext().getAuthentication();
     }
 
-    public KreditorUserDetails getUserDetails() {
+    private KreditorUserDetails getUserDetails() {
         return (KreditorUserDetails) this.getAuthentication().getPrincipal();
     }
 
