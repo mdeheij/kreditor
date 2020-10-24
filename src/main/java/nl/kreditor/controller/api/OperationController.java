@@ -61,14 +61,14 @@ public class OperationController {
             @PathVariable("operationId") @Parameter(schema = @Schema(type = "integer")) Operation operation,
             @Valid @RequestBody OperationForm operationForm
     ) {
-        //TODO: set parent relation to book
-
+        operation.setBook(book);
         operation.setModified(LocalDateTime.now());
         operation.setName(operationForm.getName());
         operation.setCategory(categoryRepository.findById(operationForm.getCategoryId()));
         operation.setType(operationForm.getType());
         operation.setPaymentType(PaymentType.UNKNOWN);
-        return null;
+
+        return new OperationResponse(operationService.persist(operation));
     }
 
     @GetMapping("/{operationId}")
