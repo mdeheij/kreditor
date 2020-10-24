@@ -1,14 +1,11 @@
 package nl.kreditor.response;
 
 import lombok.Data;
-import nl.kreditor.model.Book;
 import nl.kreditor.model.Operation;
 import nl.kreditor.model.OperationType;
 import nl.kreditor.model.PaymentType;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Data
 public class OperationResponse {

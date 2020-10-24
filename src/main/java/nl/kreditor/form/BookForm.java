@@ -2,7 +2,6 @@ package nl.kreditor.form;
 
 
 import lombok.Data;
-import org.hibernate.validator.constraints.Currency;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

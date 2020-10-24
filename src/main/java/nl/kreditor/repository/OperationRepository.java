@@ -2,7 +2,6 @@ package nl.kreditor.repository;
 
 import nl.kreditor.model.Book;
 import nl.kreditor.model.Operation;
-import nl.kreditor.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -12,16 +12,16 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class KreditorUserDetails implements UserDetails {
-    private Integer id;
+    private final Integer id;
 
-    private String username;
+    private final String username;
 
     private String email;
 
     @JsonIgnore
-    private String password;
+    private final String password;
 
-    private Collection<? extends GrantedAuthority> authorities;
+    private final Collection<? extends GrantedAuthority> authorities;
 
     public KreditorUserDetails(Integer id, String username, String password,
                                Collection<? extends GrantedAuthority> authorities) {

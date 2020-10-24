@@ -12,15 +12,15 @@ abstract class NetworkFlowSolverBase {
     protected static final long INF = Long.MAX_VALUE / 2;
 
     // Inputs: n = number of nodes, s = source, t = sink
-    protected int n;
+    protected final int n;
     protected Member s, t;
 
     protected long maxFlow;
 
-    protected boolean[] minCut;
+    protected final boolean[] minCut;
     protected List<Edge>[] graph;
     protected String[] vertexLabels;
-    protected List<Edge> edges;
+    protected final List<Edge> edges;
 
     // Indicates whether the network flow algorithm has ran. We should not need to
     // run the solver multiple times, because it always yields the same result.
@@ -42,8 +42,9 @@ abstract class NetworkFlowSolverBase {
 
     // Construct an empty graph with n nodes including the source and sink nodes.
     private void initializeGraph() {
+        //noinspection unchecked
         graph = new List[n];
-        for (int i = 0; i < n; i++) graph[i] = new ArrayList<Edge>();
+        for (int i = 0; i < n; i++) graph[i] = new ArrayList<>();
     }
 
     // Add labels to vertices in the graph.

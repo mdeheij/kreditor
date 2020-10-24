@@ -33,7 +33,7 @@ public class Contact implements Member {
     private boolean isLinked = true;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "owner_id", nullable = true)
+    @JoinColumn(name = "owner_id")
     private User owner;
 
     @Transient
@@ -43,7 +43,7 @@ public class Contact implements Member {
     private int memberId;
 
     public int getId() {
-        return id.intValue();
+        return id;
     }
 
     @Override

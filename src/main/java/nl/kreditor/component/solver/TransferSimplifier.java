@@ -17,7 +17,7 @@ public class TransferSimplifier {
     private static final long OFFSET = 1000000000L;
 
     // TODO: replace this to allow different currencies
-    public static SystemCurrency defaultCurrency = new SystemCurrency("EUR");
+    public static final SystemCurrency defaultCurrency = new SystemCurrency("EUR");
 
     public TransferSimplifier(List<Transaction> transactions) {
         this.transactions = transactions;
@@ -37,10 +37,7 @@ public class TransferSimplifier {
      * Flatten list of transactions and return a simplified list.
      */
     public List<Transaction> simplify() {
-        System.out.println(transactions);
         for (Transaction t : transactions) {
-            System.out.println("Processing transaction: " + t.toString());
-
             //Add edge with precision in the form of cents
             solver.addEdge(
                     t.getFrom(),
@@ -79,7 +76,6 @@ public class TransferSimplifier {
         }
 
         if (saldi.values().stream().allMatch(bigDecimal -> bigDecimal.doubleValue() == 0)) {
-            System.out.println("All saldi are equal to zero. That means transfers are useless.");
             valid = false;
         }
 
@@ -92,7 +88,7 @@ public class TransferSimplifier {
         Integer edgePos;
 
         while ((edgePos = getNonVisitedEdgeIndex(solver.getEdges())) != null) {
-            // Force recomputation of subsequent flows in the graph
+            // Force recompute of subsequent flows in the graph
             solver.recompute();
             // Set source and sink in the flow graph
             Edge firstEdge = solver.getEdges().get(edgePos);

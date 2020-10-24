@@ -2,10 +2,8 @@ package nl.kreditor.form;
 
 
 import lombok.Data;
-import nl.kreditor.model.AllotmentType;
 
 import javax.validation.constraints.*;
-import java.math.BigDecimal;
 
 @Data
 public class AuthenticationForm {
