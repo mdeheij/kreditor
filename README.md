@@ -17,6 +17,9 @@ Kreditor
   <a href="./LICENSE">Licensing</a>
 </p>
 
+> _Kreditor, Creditor, Crediteur, кредитор:
+a person or company to whom money is owed._
+
 The goal of this project is to develop a flexible expense management and splitting application. This repository currently contains an API server built using Spring (REST) and Java.
 
 **This project is under active development. Current API specification is very likely to change.**
