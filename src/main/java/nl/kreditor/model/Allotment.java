@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import nl.kreditor.component.currency.SystemCurrency;
 import nl.kreditor.component.transaction.PaymentCalculation;
 import nl.kreditor.component.transaction.Transaction;
 import org.springframework.data.annotation.CreatedDate;

@@ -1,7 +1,7 @@
 package nl.kreditor.component.solver;
 
 import nl.kreditor.component.transaction.Transaction;
-import nl.kreditor.model.SystemCurrency;
+import nl.kreditor.component.currency.SystemCurrency;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,8 +1,8 @@
 package nl.kreditor.response.currency;
 
 import lombok.Data;
-import nl.kreditor.model.Currency;
-import nl.kreditor.model.CurrencySource;
+import nl.kreditor.component.currency.Currency;
+import nl.kreditor.component.currency.CurrencySource;
 
 @Data
 public class CurrencyResponse {

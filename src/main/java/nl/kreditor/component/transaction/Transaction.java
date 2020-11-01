@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import nl.kreditor.component.solver.Member;
-import nl.kreditor.model.Currency;
+import nl.kreditor.component.currency.Currency;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

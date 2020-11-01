@@ -1,4 +1,4 @@
-package nl.kreditor.model;
+package nl.kreditor.component.currency;
 
 public interface Currency {
     String getCurrencyCode();

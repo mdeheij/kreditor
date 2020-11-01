@@ -1,5 +1,6 @@
 package nl.kreditor.model;
 
+import nl.kreditor.component.currency.SystemCurrency;
 import nl.kreditor.component.transaction.Transaction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
