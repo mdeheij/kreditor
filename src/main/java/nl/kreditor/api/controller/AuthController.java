@@ -1,4 +1,4 @@
-package nl.kreditor.controller.api;
+package nl.kreditor.api.controller;
 
 import nl.kreditor.model.ERole;
 import nl.kreditor.model.Role;

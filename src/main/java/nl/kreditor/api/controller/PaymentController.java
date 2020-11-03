@@ -1,4 +1,4 @@
-package nl.kreditor.controller.api;
+package nl.kreditor.api.controller;
 
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
