@@ -23,14 +23,15 @@ import java.util.stream.Collectors;
 @CrossOrigin("*")
 @RequestMapping("/api/v1/books")
 public class BookController {
-    @Autowired
-    private BookService bookService;
+    private final BookService bookService;
+
+    private final Authenticatable auth;
 
     @Autowired
-    private UserService userService;
-
-    @Autowired
-    private Authenticatable auth;
+    public BookController(BookService bookService, Authenticatable auth) {
+        this.bookService = bookService;
+        this.auth = auth;
+    }
 
     @GetMapping("/")
     @io.swagger.v3.oas.annotations.Operation(tags = {"app"})
