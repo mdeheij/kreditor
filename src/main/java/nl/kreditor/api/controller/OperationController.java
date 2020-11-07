@@ -25,21 +25,29 @@ import java.util.stream.Collectors;
 @CrossOrigin("*")
 @RequestMapping("/api/v1/books/{bookId}/operations")
 public class OperationController {
-    @Autowired
-    private BookService bookService;
+    private final BookService bookService;
+
+    private final OperationService operationService;
+
+    private final CategoryRepository categoryRepository;
 
     @Autowired
-    private OperationService operationService;
-
-    @Autowired
-    private CategoryRepository categoryRepository;
+    public OperationController(
+            BookService bookService,
+            OperationService operationService,
+            CategoryRepository categoryRepository
+    ) {
+        this.bookService = bookService;
+        this.operationService = operationService;
+        this.categoryRepository = categoryRepository;
+    }
 
     @GetMapping("/")
     @io.swagger.v3.oas.annotations.Operation(tags = {"app"})
-    List<OperationResponse> getOperations(@PathVariable Integer bookId) throws NotFoundException {
-        return operationService
-                .findByBook(bookService.findById(bookId))
-                .stream()
+    List<OperationResponse> getOperations(
+            @PathVariable("bookId") @Parameter(schema = @Schema(type = "integer")) Book book
+    ) {
+        return book.getOperations().stream()
                 .map(OperationResponse::new)
                 .collect(Collectors.toList());
     }
